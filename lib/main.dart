@@ -28,7 +28,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // String data = "";
   Future<List>? _launches;
   bool _isDataLoaded = false;
 
@@ -63,7 +62,6 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    // data = ApiService().get().toString();
                     _fetchData();
                   });
                 },
@@ -90,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: const EdgeInsets.only(bottom: 15.0),
                                 child: Container(
                                   height: 150,
-                                  // width: double.infinity,
+                                  width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: Colors.green,
                                     borderRadius: BorderRadius.circular(20.0),
@@ -113,7 +111,6 @@ class _HomePageState extends State<HomePage> {
                                           height: 8.0,
                                         ),
                                         Text(
-                                          // "This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! ",
                                           launchDateUtc,
                                           style: const TextStyle(
                                               fontSize: 16,
@@ -124,17 +121,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               );
-                              // return ListTile(
-                              //   title: Text(missionName),
-                              //   subtitle: Text(launchDateUtc),
-                              // );
                             }),
-                        // child: SingleChildScrollView(
-                        // child: Padding(
-                        //   padding: const EdgeInsets.all(16.0),
-                        //   child: Text(snapshot.data ?? "No data"),
-                        // ),
-                        // ),
                       );
                     } else if (snapshot.hasError) {
                       return Text('Error: ${snapshot.error}');
